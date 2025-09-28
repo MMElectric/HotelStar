@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HotelStar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-inner">
+    <h1 class="logo">Hotel<span>Star</span></h1>
+
+    <!-- Hamburger (vidljiv samo na mobitelu) -->
+    <button class="nav-toggle" aria-label="Open menu" aria-controls="nav-menu" aria-expanded="false">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <nav class="nav">
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#in-hotel">In Our Hotel</a></li>
+        <li><a href="#blog">Hotel Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#book" class="btn">Book a Room</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Overlay (može ostati, JS ga stvara ako ga nema) -->
+<div class="nav-overlay" hidden></div>
+
+
+<div class="nav-overlay" hidden></div>
+
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>Rest with a View of the Endless Sea, <span>HotelStar</span></h2>
+      <p>Enjoy pure comfort, premium services, and special experiences under the endless horizon.</p>
+      <a href="#book" class="btn">Reserve Now</a>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES STRIP ===== -->
+<section id="services" class="services-strip" aria-label="Free services">
+  <div class="container">
+    <ul class="icons">
+      <li class="icon">
+        <div class="icon-emoji">🍳</div>
+        <h3>Free Services</h3>
+        <p>Breakfast and spa amenities</p>
+      </li>
+      <li class="icon">
+        <div class="icon-emoji">📶</div>
+        <h3>Free Wi-Fi</h3>
+        <p>High-speed internet throughout the hotel</p>
+      </li>
+      <li class="icon">
+        <div class="icon-emoji">🚌</div>
+        <h3>Free Transport</h3>
+        <p>Airport ↔ hotel</p>
+      </li>
+      <li class="icon">
+        <div class="icon-emoji">🚕</div>
+        <h3>5★ Taxi Ride</h3>
+        <p>Verified partners 24/7</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+  <!-- Rooms -->
+  <section id="rooms" class="section">
+    <div class="container">
+      <h2>Explore Our Rooms</h2>
+      <div class="room-grid">
+        <div class="room">
+          <img src="room1.jpg" alt="Seaview Suite">
+          <h3>Seaview Suite</h3>
+          <p>$120 / night</p>
+        </div>
+        <div class="room">
+          <img src="room2.jpg" alt="Coastal Haven">
+          <h3>Coastal Haven</h3>
+          <p>$80 / night</p>
+        </div>
+        <div class="room">
+          <img src="room3.jpg" alt="Jacuzzi Hideaway">
+          <h3>Jacuzzi Hideaway</h3>
+          <p>$190 / night</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ===== Booking sekcija (primjer) ===== -->
+<section id="book" class="booking">
+  <div class="container">
+    <form class="booking-form">
+      <input type="date" id="checkin"  name="checkin"  autocomplete="off" required>
+      <input type="date" id="checkout" name="checkout" autocomplete="off" required>
+
+      <select id="adults" name="adults" autocomplete="off" required>
+        <option value="" selected disabled>Adults</option>
+        <option>1</option><option>2</option><option>3</option><option>4</option>
+      </select>
+
+      <select id="children" name="children" autocomplete="off" required>
+        <option value="" selected disabled>Children</option>
+        <option>0</option><option>1</option><option>2</option><option>3</option>
+      </select>
+
+      <button type="submit" class="btn">Check Availability</button>
+    </form>
+  </div>
+</section>
+
+  <!-- ===== ABOUT / O HOTELU ===== -->
+<section id="about" class="about-section" aria-label="About HotelStar">
+  <div class="container about-grid">
+    <div class="about-text">
+      <h2>About <span style="color:#e9c341">HotelStar</span></h2>
+      <p class="lead">
+        A modern seaside hotel with an infinity pool, spa area and spacious rooms with sea views. 
+        Our mission is to provide a peaceful, comfortable and personalized stay – from check-in to breakfast on the terrace.
+      </p>
+
+      <ul class="about-highlights">
+        <li>✔ 120+ rooms and suites</li>
+        <li>✔ Spa & wellness, fitness, outdoor pool</li>
+        <li>✔ Conference rooms and event packages</li>
+        <li>✔ Airport shuttle ↔ hotel</li>
+      </ul>
+    </div>
+
+    <div class="about-media">
+      <img src="https://plus.unsplash.com/premium_photo-1661964071015-d97428970584?q=80&w=1620&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+           alt="Hotel lobby" class="about-main">
+      <div class="about-thumbs">
+        <img src="room1.jpg" alt="Room">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1000&auto=format&fit=crop" alt="Restaurant">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ===== IN OUR HOTEL ===== -->
+<section id="in-hotel" class="in-hotel section">
+  <div class="container">
+    <h2>In our <span style="color:#e9c341">Hotel</span></h2>
+    <p class="muted">Explore the facilities and amenities.</p>
+
+   <div class="tiles">
+  <a class="tile" href="#">
+    <img src="room3.jpg" alt="Rooms">
+    <span>Rooms</span>
+  </a>
+
+  <a class="tile" href="#">
+    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Conferences & Meetings">
+    <span>Conferences & Meetings</span>
+  </a>
+
+  <a class="tile" href="#">
+    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Dining">
+    <span>Dining</span>
+  </a>
+
+  <a class="tile" href="#">
+    <img src="https://images.unsplash.com/photo-1520256862855-398228c41684?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Service & Facilities">
+    <span>Service & Facilities</span>
+  </a>
+
+  <a class="tile" href="#">
+    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Wellness & Spa">
+    <span>Wellness & Spa</span>
+  </a>
+
+  <a class="tile" href="#">
+    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Wedding Package">
+    <span>Wedding Package</span>
+  </a>
+</div>
+
+  </div>
+</section>
+
+<!-- ===== HOTEL BLOG ===== -->
+<section id="blog" class="blog section">
+  <div class="container">
+    <h2>Hotel <span style="color:#e9c341">Blog</span></h2>
+    <p class="muted">Best daily blog</p>
+
+    <div class="blog-grid">
+      <article class="post">
+        <img src="https://plus.unsplash.com/premium_photo-1661964071015-d97428970584?q=80&w=1620&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Staff secrets">
+        <div class="post-body"><strong>5 Hotel Staff Secrets</strong></div>
+      </article>
+      <article class="post">
+        <img src="https://images.unsplash.com/photo-1618606338706-fc3bad33dbe6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pools">
+        <div class="post-body"><strong>Best 5 Pools</strong></div>
+      </article>
+      <article class="post">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800&auto=format&fit=crop" alt="Miami">
+        <div class="post-body"><strong>15 Best Hotels in Miami</strong></div>
+      </article>
+      <article class="post">
+        <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=800&auto=format&fit=crop" alt="Deals">
+        <div class="post-body"><strong>Best Sales in 2023</strong></div>
+      </article>
+      <article class="post">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop" alt="Restaurant">
+        <div class="post-body"><strong>Best Boat Tours</strong></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWSLETTER ===== -->
+<section class="newsletter" aria-label="Newsletter & Promo Codes">
+  <div class="container">
+    <div class="nl-wrap">
+      <strong>Newsletter & Promo Codes</strong>
+      <form class="nl-form" onsubmit="event.preventDefault()">
+        <input type="email" placeholder="Enter your email" required>
+        <button>Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact-section" aria-label="Contact HotelStar">
+  <div class="container contact-grid">
+
+    <!-- Forma -->
+    <div class="contact-form">
+      <h2>Contact <span style="color:#e9c341">Us</span></h2>
+      <form action="https://formsubmit.co/mmelectric0101@gmail.com" method="POST">
+        <label>
+          Name
+          <input type="text" name="name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <!-- FormSubmit hidden fields -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="http://127.0.0.1:5500/thanks.html">
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Info -->
+    <div class="contact-info">
+      <h2>Find <span style="color:#e9c341">Us</span></h2>
+      <p><strong>HotelStar</strong><br>Seaside Avenue 1, Split, Croatia</p>
+      <p>📞 <a href="tel:+385991234567">+385 99 123 4567</a><br>
+         ✉️ <a href="mailto:mmelectric0101@gmail.com">info@hotelstar.com</a></p>
+      <p>Working hours: 24/7</p>
+
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.4349998476587!2d16.439!3d43.508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13355df7e1234567%3A0x89abcdef12345678!2sSplit!5e0!3m2!1shr!2shr!4v1699999999999"
+          width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 HotelStar. All rights reserved.</p>
+    </div>
+  </footer>
+
+<!-- ===== BOOKING MODAL (WIZARD) ===== -->
+<div id="booking-modal" class="book-modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="book-backdrop" data-close></div>
+
+  <div class="book-panel" role="document">
+    <button class="book-close" aria-label="Close" data-close>×</button>
+
+    <!-- Header sa sažetkom -->
+    <header class="book-head">
+      <h3>Book a Room</h3>
+      <p class="book-summary">
+        <span data-sum-dates>--/-- – --/--</span> •
+        <span data-sum-guests>2 Adults, 0 Children</span> •
+        <span data-sum-nights>0</span> nights
+      </p>
+    </header>
+
+    <!-- Stepper -->
+    <ol class="book-steps">
+      <li class="is-active" data-step="1">Dates</li>
+      <li data-step="2">Room</li>
+      <li data-step="3">Guest</li>
+      <li data-step="4">Payment</li>
+    </ol>
+
+    <!-- STEP 1: Dates & Guests -->
+    <section class="book-step is-active" data-step="1" aria-labelledby="step-1">
+      <h4 id="step-1">Choose dates & guests</h4>
+      <form class="book-form">
+        <label>Check-in
+          <input type="date" id="bk-checkin" required>
+        </label>
+        <label>Check-out
+          <input type="date" id="bk-checkout" required>
+        </label>
+        <label>Adults
+          <select id="bk-adults" required>
+            <option>1</option><option selected>2</option><option>3</option><option>4</option>
+          </select>
+        </label>
+        <label>Children
+          <select id="bk-children" required>
+            <option selected>0</option><option>1</option><option>2</option><option>3</option>
+          </select>
+        </label>
+      </form>
+      <div class="book-actions">
+        <button class="btn" data-next>Check availability</button>
+      </div>
+      <p class="book-msg" data-msg-1></p>
+    </section>
+
+    <!-- STEP 2: Room selection -->
+    <section class="book-step" data-step="2" aria-labelledby="step-2">
+      <h4 id="step-2">Choose a room</h4>
+      <div class="room-grid" id="room-grid"></div>
+      <div class="book-actions">
+        <button class="btn btn-outline" data-prev>Back</button>
+        <button class="btn" data-next disabled id="room-next">Continue</button>
+      </div>
+    </section>
+
+    <!-- STEP 3: Guest details -->
+    <section class="book-step" data-step="3" aria-labelledby="step-3">
+      <h4 id="step-3">Guest details</h4>
+      <form class="book-form" id="guest-form">
+        <label>Full name
+          <input type="text" id="guest-name" name="guest-name" autocomplete="name" required>
+        </label>
+        <label>Email
+          <input type="email" id="guest-email" name="guest-email" autocomplete="email" required>
+        </label>
+        <label>Phone
+          <input type="tel" id="guest-phone" name="guest-phone" autocomplete="tel" required>
+        </label>
+        <label>Special requests (optional)
+          <textarea id="guest-notes" rows="3" placeholder="Late check-in, baby cot, dietary..."></textarea>
+        </label>
+      </form>
+      <div class="book-actions">
+        <button class="btn btn-outline" data-prev>Back</button>
+        <button class="btn" data-next>Continue</button>
+      </div>
+    </section>
+
+    <!-- STEP 4: Payment (DEMO) -->
+    <section class="book-step" data-step="4" aria-labelledby="step-4">
+      <h4 id="step-4">Payment (Demo)</h4>
+
+      <div class="pay-summary">
+        <p><strong>Room:</strong> <span data-sum-room>—</span></p>
+        <p><strong>Price:</strong> €<span data-sum-price>0</span> /night × <span data-sum-nights2>0</span> = <strong>€<span data-sum-total>0</span></strong></p>
+      </div>
+
+      <form class="book-form" id="pay-form">
+        <label>Card number
+          <input type="text" id="card-number" inputmode="numeric" placeholder="4242 4242 4242 4242" maxlength="19" required>
+        </label>
+        <div class="two">
+          <label>Expiry (MM/YY)
+            <input type="text" id="card-exp" inputmode="numeric" placeholder="12/29" maxlength="5" required>
+          </label>
+          <label>CVC
+            <input type="text" id="card-cvc" inputmode="numeric" placeholder="123" maxlength="4" required>
+          </label>
+        </div>
+        <label>Name on card
+          <input type="text" id="card-name" required>
+        </label>
+      </form>
+
+      <div class="book-actions">
+        <button class="btn btn-outline" data-prev>Back</button>
+        <button class="btn" id="pay-btn">Pay €<span data-sum-total3>0</span> (Demo)</button>
+      </div>
+      <p class="book-msg" data-msg-4></p>
+    </section>
+  </div>
+</div>
+
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>

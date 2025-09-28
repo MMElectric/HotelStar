@@ -1,0 +1,365 @@
+:root{
+  --bg:#0e1116; --card:#121722; --fg:#eaf1ff; --muted:#8fa2bd;
+  --brand:#e9c341; --border:#1c2230; --radius:14px;
+}
+*{box-sizing:border-box} html,body{margin:0}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#111;background:#fff}
+img{max-width:100%;display:block;height:auto}
+a{text-decoration:none;color:inherit}
+.container{width:min(1200px,92%);margin-inline:auto}
+
+/* HEADER */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid #e9eef6}
+.header-inner{display:flex;align-items:center;gap:20px;padding:12px 0}
+.logo{margin:0;font-size:22px;letter-spacing:.2px}
+.logo span{color:var(--brand);font-weight:800}
+.nav-menu{margin:0;padding:0;list-style:none;display:flex;gap:18px}
+.nav-menu a{padding:8px 12px;border-radius:10px;color:#333}
+.nav-menu a:hover{background:#f1f4f9}
+.nav-menu .btn{background:var(--brand);color:#111;border-radius:10px;font-weight:800}
+.nav-menu .btn:hover{filter:brightness(.95)}
+
+/* HERO */
+.hero{
+  position:relative;
+  min-height:68vh;
+  display:grid; align-items:end;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.55)),
+    url("hero.jpg") center/cover no-repeat;
+}
+.hero .hero-content{
+  width:min(1200px,92%); margin-inline:auto;
+  padding:80px 0 140px; text-align:left; color:#fff;
+}
+.hero h2{margin:0 0 8px; font-size:clamp(28px,5vw,48px); font-weight:800}
+.hero h2 span{color:var(--brand)}
+.hero p{margin:0 0 16px; max-width:720px; color:rgba(255,255,255,.95)}
+.hero .btn{display:inline-block; background:var(--brand); color:#111; padding:10px 16px; border-radius:10px; font-weight:800}
+
+/* BOOKING BAR – “kartica” koja sjeda na rub hero-a */
+.booking{transform:translateY(-50px); margin-bottom:-30px}
+.booking .container{display:block}
+.booking-form{
+  background:#fff; color:#111; display:grid;
+  grid-template-columns:repeat(5,1fr) auto; gap:10px;
+  padding:12px; border:1px solid #e2e8f0; border-radius:14px;
+  box-shadow:0 18px 44px rgba(0,0,0,.15);
+}
+.booking-form input, .booking-form select{
+  width:100%; padding:10px 12px; border:1px solid #cfd8e3; border-radius:10px; background:#fff; outline:none;
+}
+.booking-form .btn{background:var(--brand); color:#111; border-radius:10px; padding:10px 16px; font-weight:800; border:0; cursor:pointer}
+@media (max-width:960px){
+  .booking{transform:none;margin:20px 0 0}
+  .booking-form{grid-template-columns:1fr 1fr 1fr; }
+}
+@media (max-width:640px){ .booking-form{grid-template-columns:1fr 1fr} }
+
+/* SECTIONS */
+.section{padding:50px 0}
+.section h2{margin:0 0 12px; font-size:clamp(22px,4vw,30px)}
+.muted{color:#6b7a93}
+
+/* ROOMS GRID */
+.room-grid{display:grid; gap:18px; grid-template-columns:repeat(3,1fr)}
+.room{
+  background:#fff; border:1px solid #e6ecf4; border-radius:14px; overflow:hidden;
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
+}
+.room img{width:100%; aspect-ratio:16/9; object-fit:cover}
+.room h3{margin:10px 12px 4px}
+.room p{margin:0 12px 14px; color:#444}
+@media (max-width:980px){ .room-grid{grid-template-columns:1fr 1fr} }
+@media (max-width:600px){ .room-grid{grid-template-columns:1fr} }
+
+/* FOOTER */
+.site-footer{margin-top:40px; background:#0b0f17; color:#cfd6e6; border-top:1px solid #121724}
+.site-footer .container{padding:18px 0; text-align:center}
+
+/* ===== SERVICES STRIP ===== */
+.services-strip{
+  position:relative; 
+  padding:28px 0;
+  /* izbaci ovu liniju ako želiš bijelo */
+  background:#fff; 
+}
+
+.services-strip .container{ position:relative; z-index:1 }
+.icons{ list-style:none; margin:0; padding:0;
+  display:grid; grid-template-columns:repeat(4,1fr); gap:14px;
+}
+.icon{
+  border-radius:14px; padding:16px; color:#000000; text-align:center;
+}
+.icon-emoji{ font-size:26px; line-height:1; margin-bottom:6px }
+.icon h3{ margin:4px 0 4px; font-weight:800 }
+.icon p{ margin:0; color:rgba(0, 0, 0, 0.9) }
+@media (max-width:900px){ .icons{ grid-template-columns:1fr 1fr } }
+@media (max-width:600px){ .icons{ grid-template-columns:1fr } }
+
+/* ===== IN OUR HOTEL ===== */
+.in-hotel .tiles{
+  display:grid; gap:14px; grid-template-columns:repeat(3,1fr);
+}
+.tile{
+  position:relative; display:block; overflow:hidden; border-radius:14px;
+  border:1px solid #e6ecf4; background:#fff;
+}
+.tile img{ width:100%; height:220px; object-fit:cover; transition:transform .4s ease, filter .4s ease }
+.tile span{
+  position:absolute; left:12px; bottom:12px; right:12px;
+  color:#fff; font-weight:800; text-shadow:0 2px 8px rgba(0,0,0,.6)
+}
+.tile::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%);
+}
+.tile:hover img{ transform:scale(1.05); filter:brightness(1.05) }
+@media (max-width:900px){ .in-hotel .tiles{ grid-template-columns:1fr 1fr } }
+@media (max-width:600px){ .in-hotel .tiles{ grid-template-columns:1fr } }
+
+/* ===== BLOG ===== */
+.blog-grid{
+  display:grid; grid-template-columns:repeat(5,1fr); gap:14px;
+}
+.post{ background:#fff; border:1px solid #e6ecf4; border-radius:12px; overflow:hidden;
+  box-shadow:0 8px 24px rgba(0,0,0,.06); transition:transform .15s ease }
+.post:hover{ transform:translateY(-2px) }
+.post img{ width:100%; aspect-ratio:4/3; object-fit:cover }
+.post-body{ padding:10px }
+@media (max-width:1000px){ .blog-grid{ grid-template-columns:repeat(3,1fr) } }
+@media (max-width:700px){ .blog-grid{ grid-template-columns:repeat(2,1fr) } }
+@media (max-width:480px){ .blog-grid{ grid-template-columns:1fr } }
+
+/* ===== NEWSLETTER ===== */
+.newsletter{
+  background:#0b0f17; color:#cfd6e6; border-top:1px solid #121724; border-bottom:1px solid #121724;
+  padding:20px 0; margin-top:40px;
+}
+.nl-wrap{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap }
+.nl-form{ display:flex; gap:10px }
+.nl-form input{
+  padding:10px 12px; border-radius:10px; border:1px solid #2a3244; background:#0e1420; color:#eaf1ff; min-width:260px;
+}
+.nl-form button{
+  padding:10px 14px; border-radius:10px; border:1px solid #3a4153; background:#141b29; color:#fff; font-weight:800; cursor:pointer;
+}
+
+/* ===== ABOUT ===== */
+.about-section{ padding:60px 0; background:#fff; }
+.about-grid{
+  display:grid; grid-template-columns:1.1fr .9fr; gap:22px; align-items:center;
+}
+.about-text .lead{ color:#6b7a93; margin:8px 0 14px; max-width:58ch; }
+.about-highlights{ margin:0 0 16px; padding-left:0; list-style:none; color:#2b3445; }
+.about-highlights li{ margin:6px 0; }
+
+.about-media{ display:grid; gap:12px; }
+.about-main{
+  width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:14px;
+  border:1px solid #e6ecf4; box-shadow:0 10px 24px rgba(0,0,0,.08);
+}
+.about-thumbs{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.about-thumbs img{
+  width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:12px; border:1px solid #e6ecf4;
+}
+
+@media (max-width:960px){
+  .about-grid{ grid-template-columns:1fr; }
+  .about-media{ order:-1; }
+}
+
+/* glatko skrolanje i offset za sticky header */
+html{ scroll-behavior:smooth; }
+section[id]{ scroll-margin-top: 90px; } /* visina sticky headera */
+
+/* ===== CONTACT ===== */
+.contact-section{
+  padding:60px 0;
+  background:#f9fafc;
+}
+.contact-grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:28px;
+}
+.contact-form h2,
+.contact-info h2{ margin-bottom:16px; }
+.contact-form form{ display:flex; flex-direction:column; gap:14px; }
+.contact-form label{ display:flex; flex-direction:column; font-weight:600; color:#2b3445; }
+.contact-form input,
+.contact-form textarea{
+  margin-top:6px;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid #cfd6e6;
+  font-family:inherit;
+}
+.contact-form button{ align-self:flex-start; }
+
+.contact-info p{ margin:8px 0; color:#444; }
+.contact-info a{ color:#e9c341; font-weight:600; text-decoration:none; }
+.contact-info .map{ margin-top:14px; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,.12); }
+
+@media (max-width:900px){
+  .contact-grid{ grid-template-columns:1fr; }
+}
+
+/* ===== THANK YOU PAGE ===== */
+.thanks-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 160px); /* minus header+footer */
+  background: url("hero.jpg") center/cover no-repeat; /* možeš staviti svoju pozadinu */
+  padding: 40px 20px;
+}
+
+.thanks-box {
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.9); /* poluprozirna bijela */
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  max-width: 420px;
+}
+
+.thanks-box h1 {
+  color: #2b3445;
+  margin-bottom: 16px;
+}
+
+.thanks-box p {
+  margin-bottom: 24px;
+  color: #444;
+}
+
+/* ===== NAV: DESKTOP ===== */
+.nav-toggle{ display:none; }                 /* hamburger sakriven na desktopu */
+.nav-menu{ display:flex; gap:16px; list-style:none; margin:0; padding:0; }
+
+/* Overlay iza menija */
+.nav-overlay{
+  position:fixed; inset:0;
+  background:rgba(0, 0, 0, 0.925);
+  opacity:0; pointer-events:none;
+  transition:opacity .25s ease;
+  z-index:1400;                               /* ispod menija */
+}
+.nav-overlay.active{ opacity:1; pointer-events:auto; }
+
+/* ===== NAV: MOBILE ===== */
+@media (max-width:860px){
+  .site-header{ z-index:1500; }
+
+  /* Hamburger ON */
+  .nav-toggle{
+    display:inline-block;
+    border:0; background:transparent; cursor:pointer;
+    padding:6px; margin-left:auto; color:#111; z-index:1502; /* ako je header taman -> #fff */
+  }
+  .nav-toggle .bar{
+    display:block; width:26px; height:3px; margin:5px 0; border-radius:3px; background:currentColor;
+  }
+
+  /* NEMOJ skrivati UL! (nema .nav > ul {display:none}) */
+
+  /* Drawer meni (desno) */
+  .nav-menu{
+    position:fixed; top:0; right:20px; bottom:0;
+    width:min(92vw,340px);
+    padding:86px 18px 18px; margin:0; list-style:none;
+    display:flex; flex-direction:column; gap:12px;
+    /* skriveno dok je “zatvoren” – samo gurnuto van ekrana */
+    transform:translateX(100%);
+    transition:transform .28s ease;
+    z-index:1501;
+  }
+  .nav-menu.open{ transform:translateX(0); }
+
+  .nav-menu a{
+    display:block; padding:12px 14px; text-align:center; border-radius:10px;
+    color:#070707 !important;                    /* forsiraj bijelo ako nešto prepisuje */
+    background:rgba(233, 227, 227, 0.705);
+  }
+  .nav-menu a:hover{ background:rgba(255,255,255,.18) }
+  .nav-menu .btn{ background:#e9c341; color:#111; font-weight:800; }
+}
+
+/* Zabrani scroll pozadine kad je otvoren meni */
+body.no-scroll{ overflow:hidden; }
+
+/* (tvoj booking message – neka ostane) */
+.booking-message{ margin-top:10px; font-weight:600; font-size:.95rem; }
+
+html.no-scroll,
+body.no-scroll {
+  overflow: hidden;       /* blokira scroll na većini browsera */
+  height: 100%;           /* pomaže kod nekih layoutova */
+}
+
+body.no-scroll {
+  position: fixed;        /* iOS fix – zaledi body */
+  width: 100%;
+}
+
+/* ===== BOOKING WIZARD MODAL ===== */
+.book-modal{ position:fixed; inset:0; display:none; z-index:3000; }
+.book-modal.is-open{ display:block; }
+.book-backdrop{ position:absolute; inset:0; background:rgba(0,0,0,.6); backdrop-filter: blur(4px); }
+.book-panel{
+  position:relative; z-index:1; width:min(900px, 92vw); margin:6vh auto;
+  background:#ffffff; color:#1b2230; border-radius:16px; box-shadow:0 24px 80px rgba(0,0,0,.4);
+  overflow:hidden;
+}
+.book-close{
+  position:absolute; right:12px; top:10px; font-size:26px; background:transparent; border:0; cursor:pointer; color:#334;
+}
+.book-head{ padding:18px 20px; border-bottom:1px solid #e7edf6; background:linear-gradient(180deg,#f9fbff,#f3f7fe); }
+.book-head h3{ margin:0 0 4px; font-size:1.25rem; }
+.book-summary{ margin:0; color:#5b6a85; font-weight:600; }
+
+.book-steps{
+  display:flex; gap:8px; list-style:none; margin:0; padding:12px 16px; border-bottom:1px solid #eef2f7; background:#fff;
+}
+.book-steps li{
+  flex:1; text-align:center; padding:10px 8px; border-radius:999px; font-weight:800; color:#7b8aa6; border:1px dashed #d6deea;
+}
+.book-steps li.is-active{ color:#0f172a; border-style:solid; border-color:#bcd0ff; background:#eef4ff; }
+
+.book-step{ display:none; padding:18px 20px 20px; }
+.book-step.is-active{ display:block; }
+
+.book-form{
+  display:grid; gap:12px; grid-template-columns:1fr 1fr; align-items:start;
+}
+.book-form label{ display:grid; gap:6px; font-weight:700; color:#1f2937; }
+.book-form input, .book-form select, .book-form textarea{
+  padding:12px 12px; border:1px solid #d7e0ef; border-radius:10px; outline:none; background:#fff;
+}
+.book-form input:focus, .book-form select:focus, .book-form textarea:focus{
+  border-color:#1e78ff; box-shadow:0 0 0 3px rgba(30,120,255,.15);
+}
+.book-form .two{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+@media (max-width:720px){ .book-form{ grid-template-columns:1fr } .book-form .two{ grid-template-columns:1fr 1fr } }
+
+.book-actions{ display:flex; gap:10px; justify-content:flex-end; margin-top:12px; }
+.btn.btn-outline{ background:#fff; color:#1b2230; border:1px solid #d7e0ef; }
+.btn{ border:1px solid #1e78ff; background:#1e78ff; color:#fff; border-radius:10px; padding:10px 14px; font-weight:800; cursor:pointer; }
+
+.book-msg{ margin-top:8px; min-height:1em; font-weight:700; }
+.pay-summary{ background:#f7f9fe; border:1px solid #e6eefc; padding:12px 12px; border-radius:10px; margin-bottom:12px; }
+
+/* Rooms grid in Step 2 */
+.room-grid{ display:grid; gap:12px; grid-template-columns:repeat(2,1fr); }
+@media (max-width:720px){ .room-grid{ grid-template-columns:1fr } }
+.room-card{
+  border:1px solid #e1e8f5; border-radius:12px; overflow:hidden; background:#fff; display:grid; grid-template-columns:160px 1fr; gap:0;
+}
+.room-card img{ width:100%; height:100%; object-fit:cover; }
+.room-body{ padding:12px; display:grid; gap:6px; }
+.room-title{ margin:0; font-weight:900; }
+.room-meta{ color:#51617b; font-size:.95rem; }
+.room-price{ font-weight:900; }
+.room-select{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.room-select button{ padding:8px 12px; border-radius:10px; border:1px solid #1e78ff; background:#1e78ff; color:#fff; font-weight:800; cursor:pointer; }
+.room-select .picked{ background:#10b981; border-color:#10b981; }
