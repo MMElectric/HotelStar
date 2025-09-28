@@ -82,22 +82,57 @@ a{text-decoration:none;color:inherit}
   position:relative; 
   padding:28px 0;
   /* izbaci ovu liniju ako želiš bijelo */
-  background:#fff; 
+ background: url("servicesbg.jpg") center/cover no-repeat;
+  color: #fff;
 }
 
-.services-strip .container{ position:relative; z-index:1 }
-.icons{ list-style:none; margin:0; padding:0;
-  display:grid; grid-template-columns:repeat(4,1fr); gap:14px;
+.services-strip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.76); /* overlay da potamni sliku */
+  z-index: 0;
 }
-.icon{
-  border-radius:14px; padding:16px; color:#000000; text-align:center;
-}
-.icon-emoji{ font-size:26px; line-height:1; margin-bottom:6px }
-.icon h3{ margin:4px 0 4px; font-weight:800 }
-.icon p{ margin:0; color:rgba(0, 0, 0, 0.9) }
-@media (max-width:900px){ .icons{ grid-template-columns:1fr 1fr } }
-@media (max-width:600px){ .icons{ grid-template-columns:1fr } }
 
+.services-strip .container {
+  position: relative;
+  z-index: 1; /* tekst i ikone iznad overlaya */
+}
+
+.icons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 14px;
+}
+
+.icon {
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  color: #fff; /* sada bijeli tekst */
+}
+
+.icon-emoji {
+  font-size: 26px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.icon h3 {
+  margin: 4px 0 4px;
+  font-weight: 800;
+}
+
+.icon p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width:900px) { .icons { grid-template-columns:1fr 1fr } }
+@media (max-width:600px) { .icons { grid-template-columns:1fr } }
 /* ===== IN OUR HOTEL ===== */
 .in-hotel .tiles{
   display:grid; gap:14px; grid-template-columns:repeat(3,1fr);
@@ -363,3 +398,4 @@ body.no-scroll {
 .room-select{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
 .room-select button{ padding:8px 12px; border-radius:10px; border:1px solid #1e78ff; background:#1e78ff; color:#fff; font-weight:800; cursor:pointer; }
 .room-select .picked{ background:#10b981; border-color:#10b981; }
+
