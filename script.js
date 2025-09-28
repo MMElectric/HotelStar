@@ -99,10 +99,10 @@ if (form) {
 
   // Demo rooms
   const ROOMS = [
-    { id:'sea-suite',  name:'Seaview Suite',    beds:'1 King • 38 m² • Balcony', img:'https://images.unsplash.com/photo-1505692794403-34d4982c2753?q=80&w=1600&auto=format&fit=crop', price:120 },
-    { id:'coastal',    name:'Coastal Haven',    beds:'1 Queen • 24 m²',          img:'https://images.unsplash.com/photo-1505691723518-36a5ac3b2c5a?q=80&w=1600&auto=format&fit=crop', price:80  },
-    { id:'jacuzzi',    name:'Jacuzzi Hideaway', beds:'1 King • 42 m² • Jacuzzi', img:'https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1600&auto=format&fit=crop', price:190 },
-    { id:'family',     name:'Family Room',      beds:'2 Twin + Sofa • 40 m²',    img:'https://images.unsplash.com/photo-1552558636-62f8d7c4f61e?q=80&w=1600&auto=format&fit=crop', price:130 }
+    { id:'sea-suite',  name:'Seaview Suite',    beds:'1 King • 38 m² • Balcony', img:'room1.jpg', price:120 },
+    { id:'coastal',    name:'Coastal Haven',    beds:'1 Queen • 24 m²',          img:'room2.jpg', price:80  },
+    { id:'jacuzzi',    name:'Jacuzzi Hideaway', beds:'1 King • 42 m² • Jacuzzi', img:'jazuzzi.jpg', price:190 },
+    { id:'family',     name:'Family Room',      beds:'2 Twin + Sofa • 40 m²',    img:'familyroom.jpg', price:130 }
   ];
 
   let current = 1;
@@ -300,3 +300,4 @@ if (form) {
   });
 
 })();
+
